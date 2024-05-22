@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckPoint_8_DevCamp</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Vast+Shadow&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Conceptos basicos de JavaScript.</h1>
+            <p>¡Hola! Hoy quero explicar algunos conceptos básicos de JavaScript, los cuales nos ayudaran a comprender este grandioso lenguaje de programación, 
+                el cual nos llevara a crear aplicaciones o paginas web muy completas y funcionales.</p>
+            <hr>
+        </div>
+        
+        <div class="preguntas_respuestas">
+            <div class="blucles">
+                    <div class="preguntas">
+                        <h2>¿Que tipo de blucles hay en JS?</h2>
+                    </div>
+                    <div class="explicacion">
+                        <p>En este punto vamos a explicar los diferentes tipos de bucles que existen en este lenguaje, entender cómo funcionan, 
+                            para qué se utilizan y cómo se escriben. Los bucles son fundamentales en la programación porque nos permiten ejecutar un bloque de código 
+                            múltiples veces de manera eficiente, pero... ¿Que es un bucle?</p>
+                    </div>
+                    <div class="respuestas">
+                        <h3>¿Que es un bucle?</h3>
+                        <p>Un bucle es una estructura que permite repetir un bloque de código un número determinado de veces o hasta que se cumpla una condición específica.
+                            Los bucles nos ayudan a automatizar tareas repetitivas sin tener que escribir el mismo código una y otra vez. A continuación, 
+                            vamos a ver los tipos de bucles que existen.</p>
+                        <ol>
+                            <li>Bucle FOR:</li>
+                            <p>Probablemente es el más común. Se utiliza cuando se sabe con antelación cuántas veces queremos que se ejecute el bloque de código. 
+                                Veamos como es su sintaxis:</p>
+                            <div class="codigo">    
+                                <pre>
+                                    <code class="javascript">
+                                        for (inicialización; condición; actualización) {
+                                            // código a ejecutar
+                                        };
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>Luego de ver la sintaxis o la forma de escribir un bucle 'for', veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/1. Bucles/Bucle 1.png" alt="Bucle_FOR" style="height: 350px; width: 600px;">
+                            </p>
+                            <p>Aqui te explico para que sirve cada elemento del anterior ejemplo de codigo.
+                                <ul>
+                                    <li>Inicialización:</li>
+                                    <p>`let i = 0` establece el punto de partida.</p>
+                                    <li>Condición:</li>
+                                    <p>`i < 5` evalúa si el bucle debe continuar.</p>
+                                    <li>Actualización:</li>
+                                    <p>`i++` incrementa el valor de `i` en 1 en cada iteración.</p>
+                                </ul>
+                            </p>
+                            <li>Bucle WHILE:</li>
+                            <P>El bucle `while` ejecuta un bloque de código siempre que una condición específica sea verdadera. Es útil cuando no sabemos de antemano 
+                                cuántas veces se ejecutará el bucle.; Aquíi te presento la sintaxis para la codificación de esta bucle</P>
+                            <div class="codigo">    
+                                <pre>
+                                    <code class="javascript">
+                                        while (condición) {
+                                            // código a ejecutar
+                                        }                                    
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>Luego de ver la sintaxis o la forma de escribir un bucle 'while', veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/1. Bucles/Bucle 2.png" alt="Bucle_while" style="height: 350px; width: 600px;">
+                            </p>
+                            <p>En este caso, el bucle continuará ejecutándose mientras 'i' sea menor que 6.</p>
+                            <li>Bucle DO...WHILE:</li>
+                            <p>El bucle `do...while` es similar al `while`, pero se asegura de que el bloque de código se ejecute al menos una vez, ya que la condición 
+                                se evalúa después de ejecutar el bloque de código. Veamos la sintaxis del código:</p>
+                            <div class="codigo">    
+                                <pre>
+                                    <code class="javascript">
+                                        do {
+                                            // código a ejecutar
+                                        } while (condición);                                                                       
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>Luego de ver la sintaxis o la forma de escribir un bucle 'do...while', veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/1. Bucles/Bucle 3.png" alt="Bucle_do-while" style="height: 350px; width: 600px;">
+                            </p>
+                            <p>Aquí, el bloque de código se ejecutará al menos una vez, incluso si la condición es falsa desde el principio.</p>
+                            <li>Bucle FOR...IN:</li>
+                            <p>El bucle for...in en JavaScript se utiliza para iterar sobre las propiedades enumerables de un objeto. Esto significa que recorre todas las 
+                                propiedades de un objeto que son enumerables, permitiendo acceder a cada una de ellas. A continuación, se proporciona una explicación 
+                                detallada y ejemplos para ilustrar su uso.
+                            <br>
+                                Pero... ¿Qué es una propiedad enumerable?
+                                <br>
+                                Una propiedad enumerable es una propiedad de un objeto que tiene su atributo enumerable establecido como true. De forma predeterminada,
+                                las propiedades definidas de manera directa en un objeto (utilizando la sintaxis de objeto literal o Object.defineProperty) son enumerables.
+                                Veamos la sintaxis del código:</p>
+                            <div class="codigo">    
+                                <pre>
+                                    <code class="javascript">
+                                        for (propiedad in objeto) {
+                                            // código a ejecutar
+                                        }                                                                                                         
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>Luego de ver la sintaxis o la forma de escribir un bucle 'for...in', veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/1. Bucles/Bucle 4.png" alt="Bucle_for-in" style="height: 350px; width: 600px;">
+                            </p>
+                            <p>Este bucle recorrerá cada propiedad del objeto `persona` y mostrará su nombre y valor.</p>
+                            <li>Bucle FOR...OF:</li>
+                            <p>El bucle for...of en JavaScript se utiliza para iterar sobre objetos iterables, como arrays, strings, mapas, conjuntos y otros objetos que 
+                                implementan el protocolo iterable. A diferencia del bucle for...in, que itera sobre las propiedades enumerables de un objeto, for...of se 
+                                centra en iterar sobre los valores de un iterable. Veamos la sintaxis del código:</p>
+                            <div class="codigo">    
+                                <pre>
+                                    <code class="javascript">
+                                        for (variable of iterable) {
+                                            // código a ejecutar
+                                        }                                                                                                                                          
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>Luego de ver la sintaxis o la forma de escribir un bucle 'for...of', veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/1. Bucles/Bucle 5.png" alt="Bucle_for-of" style="height: 350px; width: 600px;">
+                            </p>
+                            <p>Este bucle recorrerá cada elemento del array `numeros` y mostrará su valor.</p>
+                        </ol>
+                        <br>
+                        <h3>Hemos aprendido que:</h3>
+                        <p>Los bucles son herramientas esenciales en JavaScript que permiten manejar tareas repetitivas de manera eficiente y efectiva. Cada tipo de bucle
+                            tiene su uso específico y es importante entender cuándo y cómo utilizarlos como, por ejemplo:
+                            <ul>
+                                <li>Recorrer arrays o listas para procesar cada elemento.</li>
+                                <li>Repetir una acción un número específico de veces.</li>
+                                <li>Iterar sobre propiedades de objetos.</li>
+                                <li>Ejecutar tareas hasta que se cumpla una condición específica.</li>
+                            </ul>
+                        </p>
+                    </div>
+            </div>
+            <hr>
+            <div class="variables">
+                <div class="preguntas">
+                    <h2>¿Cuáles son las diferencias entre const, let y var?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>Conocer las diferencias entre la declaracion de variables `const`, `let` y `var` es fundamental para escribir código en JavaScript de manera muy 
+                        eficaz y segura. Estos tres tipos de declaraciones de variables tienen características y comportamientos distintos que es importante conocer al 
+                        momento de iniciar con la programcación del código. Vamos a ver cada uno de ellos en detalle.</p>
+                </div>
+                <div class="respuestas">
+                    <ol>
+                        <li>VAR:</li>
+                        <p>Es la forma más antigua de declarar variables en JavaScript. Fue la única manera disponible hasta la introducción de `let` y `const`
+                            en ECMAScript 6 (ES6) en 2015.Las variables declaradas con var tienen un alcance de función, lo que significa que son accesibles en 
+                            cualquier parte de la función en la que se declaran. Si var se declara fuera de una función, tiene un alcance global y es accesible 
+                            desde cualquier parte del código. Es por esto que las variables declaradas con var pueden ser redefinidas en el mismo ámbito sin causar
+                            errores. Esto puede llevar a comportamientos inesperados, especialmente en bloques de código complejos o largos además pueden ser reasignadas
+                            a nuevos valores tantas veces como sea necesario.
+                        Tenemos una palabra ‘Clave’  que es Hoisting y esto significa que las declaraciones de variables con var son "elevadas" (hoisted) al
+                        principio de su contexto de ejecución, es decir, al comienzo de la función o al inicio del script si están en el ámbito global. Sin embargo,
+                        solo la declaración se eleva, no la inicialización. Esto significa que una variable declarada con var se puede utilizar antes de su declaración 
+                        en el código, pero su valor será undefined hasta que la línea de asignación se ejecute. <br> Aqui vemos la sintaxis para declarar una variable 
+                        'VAR'</p>
+                        <pre>
+                            <code class="javascript">
+                                var nombreDeVariable = "Variable definida";                                                                       
+                            </code>
+                        </pre>
+                        <p>Luego de ver la sintaxis de la declaracion de variable VAR, veamos el siguiente ejemplo práctico:
+                            <br>
+                            <img src="Imagenes/2. Variables/Var 1.png" alt="Variable_VAR" style="height: 350px; width: 600px;">
+                        </p>
+                        <br>
+                        <p>Como conclución tenemos lo siguiente:</p>
+                            <ul> 
+                                <li>Ausencia de Alcance de Bloque:</li>
+                                <p>A diferencia de let y const, var no respeta el alcance de bloque, lo que significa que las variables declaradas dentro de un 
+                                    bloque de código (if, for, while, etc.) siguen teniendo un alcance de función o global. Esto puede causar problemas de lógica
+                                    en el código si no se entiende bien esta característica.</p>
+                                <li>Propiedad del Objeto Global:</li> 
+                                <p>Cuando se declara una variable con var en el ámbito global (fuera de cualquier función), se convierte en una propiedad del objeto
+                                    global (window en navegadores web). Esto no ocurre con variables declaradas con let o const.</p>                        
+                                <li>Errores Silenciosos:</li>
+                                <p>La declaración con var no muestra errores de redeclaración dentro del mismo ámbito, lo que puede llevar a errores silenciosos y 
+                                    difíciles de depurar. Por ejemplo, si se declara una variable accidentalmente dos veces, el lenguaje no lanzará un error, simplemente 
+                                    sobrescribirá la variable anterior.</p>
+                            </ul>
+                            <br>
+                            <li>LET:</li>
+                            <p>La declaración de variables en JavaScript clave let fue introducida en ES6 (ECMAScript 2015) ha sido diseñada para proporcionar un
+                                control más predecible y preciso sobre el alcance y el comportamiento de las variables en comparación con var. Las variables declaradas 
+                                con let tienen un alcance de bloque, lo que significa que solo son accesibles dentro del bloque en el que se definen, como dentro de un
+                                par de llaves {} en estructuras de control como if, for, while, entre otras. Este alcance de bloque ayuda a prevenir errores comunes
+                                relacionados con el acceso y la manipulación de variables fuera de su contexto adecuado. Además, let también respeta el concepto de
+                                    hoisting mencionado anteriormente, pero de manera más restringida: aunque la declaración de la variable es elevada al inicio del bloque,
+                                    no se puede acceder a la variable antes de su declaración real en el código, evitando así que se obtenga un valor undefined inesperado,
+                                    como sucede con var. Otro aspecto significativo es que las variables declaradas con let no pueden ser redeclaradas en el mismo ámbito,
+                                    lo que ayuda a prevenir errores de redeclaración accidental y mejora la legibilidad y mantenibilidad del código. Sin embargo,
+                                        las variables let pueden ser reasignadas, lo que permite la actualización de su valor a lo largo de su vida útil dentro de su 
+                                        bloque de alcance.
+                            <br>
+                            A continuación, te presento la sintaxis para la declaracion de variable 'LET'.
+                            </p>
+                            <pre>
+                                <code class="javascript">
+                                    let nombreDeVariable = "Variable definida";                                                                       
+                                </code>
+                            </pre>
+                            <p>Ahora veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/2. Variables/let 2.png" alt="Variable_let" style="height: 350px; width: 600px;">
+                            </p>
+                            <br>
+                            <p>De lo anteriormente aprendido podemos concluir que let ofrece un control más refinado y seguro sobre la gestión de variables en JavaScript.
+                                Al proporcionar un alcance de bloque y al restringir el hoisting y la redeclaración, let reduce la probabilidad de errores comunes y 
+                                comportamientos inesperados que pueden surgir con el uso de var. Por tanto, es recomendable usar let en lugar de var para declarar 
+                                variables que necesiten ser reasignadas, ya que mejora la claridad y estabilidad del código, asegurando que las variables sean utilizadas
+                                solo en el contexto donde fueron definidas.</p>
+                            <li>CONST:</li>
+                            <p>La declaración de variables en JavaScript con la palabra clave const, también introducida en ES6 (ECMAScript 2015), está diseñada 
+                                para crear variables cuyo valor NO puede ser reasignado después de su inicialización. Similar a let, las variables declaradas con
+                                const tienen un alcance de bloque, lo que significa que solo son accesibles dentro del bloque en el que se definen, como dentro de 
+                                un par de llaves {} en estructuras de control como if, for, y while, entre otras. Una característica clave de const es que la variable
+                                debe ser inicializada en el momento de su declaración y no puede ser reasignada posteriormente. Sin embargo, es importante 
+                                notar que const no hace que los objetos y arreglos sean inmutables; simplemente impide que se reasigne la variable que los contiene.
+                                Esto significa que las propiedades de los objetos y los elementos de los arreglos declarados con const todavía pueden ser modificados.
+                            <br>
+                            A continuación, te presento la sintaxis para la declaracion de variable 'const'.
+                            </p>
+                            <pre>
+                                <code class="javascript">
+                                    const nombreDeVariable = "Variable definida";                                                                       
+                                </code>
+                            </pre>
+                            <p>Ahora veamos el siguiente ejemplo práctico:
+                                <br>
+                                <img src="Imagenes/2. Variables/const 3.png" alt="Variable_const" style="height: 350px; width: 600px;">
+                            </p>
+                            <br>
+                            <p>Resumiendo, const ofrece una forma de declarar variables en JavaScript que garantiza que su valor no cambie después de su inicialización, 
+                                proporcionando así una mayor seguridad y predictibilidad en el código. Al igual que let, const utiliza un alcance de bloque y restringe
+                                el hoisting para evitar errores comunes y comportamientos inesperados. Es recomendable usar const para declarar variables cuyos valores
+                                no deban cambiar, ya que mejora la claridad y estabilidad del código, asegurando que las variables sean utilizadas solo en el contexto
+                                donde fueron definidas y manteniendo la constancia del valor asignado.</p>
+                            <br>
+                            <h3>Te presento un resumen de las diferencias en la declaracion de variables 'var', 'let' y 'const'</h3>
+                            <ul>
+                                <li>Alcance:
+                                    <ul>
+                                        <li>var:</li><p>Tiene un alcance global o de función.</p>
+                                        <li>let y const:</li><p>Tiene un alcance de bloque.</p>
+                                    </ul>
+                                </li>
+                                <li>Hoisting:
+                                    <ul>
+                                        <li>var:</li><p>La declaración es levantada y puede ser utilizada antes de su declaración, pero con valor `undefined`.</p>
+                                        <li>let y const:</li><p>Levantadas pero no inicializadas, no pueden ser utilizadas antes de su declaración.</p>
+                                    </ul>
+                                </li>
+                                <li>Re-declaración:
+                                    <ul>
+                                        <li>var:</li><p>Se puede re-declarar en el mismo ámbito.</p>
+                                        <li>let y const:</li><p>No se pueden re-declarar en el mismo ámbito.</p>
+                                    </ul>
+                                </li>
+                                <li>Reasignación:
+                                    <ul>
+                                        <li>var y let</li><p>Pueden ser reasignadas.</p>
+                                        <li>const:</li><p>No puede ser reasignada, pero los objetos y arrays pueden ser modificados</p>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <br>
+                            <h3>Hemos aprendido que:</h3>
+                            <p>Entender estas diferencias nos ayudará a elegir la declaración correcta para tus variables y escribir código más claro y robusto.</p>
+                    </ol>
+                </div>
+            </div>
+            <hr>
+            <div class="flecha">
+                <div class="preguntas">
+                    <h2>Qué es una función de flecha?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>Las funciones de flecha (arrow), fueron introducidas en ES6 (ECMAScript 2015), representan una forma más concisa de escribir funciones en JavaScript.
+                        Se definen utilizando la sintaxis `() => {}`, eliminando la necesidad de usar la palabra clave `function`. 
+                    Una de las características más notables de las funciones de flecha es que no tienen su propio contexto de `this`. En lugar de eso, heredan el `this` 
+                    del ámbito en el que fueron definidas, lo cual resuelve muchos problemas relacionados con el manejo del contexto en funciones tradicionales, 
+                    especialmente cuando se usan como callbacks o en métodos de objetos. <br>
+                    Otra característica importante de las funciones de flecha es que no tienen su propia colección de valores que reciben como entrada, llamada arguments.
+                    En lugar de eso, pueden usar la colección de valores del entorno en el que se crean, si es necesario. Además, las funciones de flecha no se pueden usar
+                    para crear nuevos objetos usando la palabra new, algo que sí pueden hacer otras funciones normales. Las funciones de flecha también permiten 
+                    escribir código más corto y claro para tareas simples, eliminando la necesidad de usar ciertas palabras clave y símbolos adicionales, 
+                    lo que hace que el código sea más fácil de leer y entender.
+                    </p>
+                    <p> Nota: Aquí tienes una explicación de la palabra <a href="https://www.freecodecamp.org/espanol/news/que-significa-this-en-javascript-la-palabra-clave-this-explicada-con-ejemplos/#:~:text=La%20palabra%20clave%20%22this%22%20explicada%20con%20ejemplos%201,impl%C3%ADcito%20en%20JavaScript%20...%205%20Para%20terminar%20">this</a> para comprender mucho mejor el anterior texto.</p>
+                    <br>
+                </div>
+                <div class="respuestas">
+                    <p>Para comprender las funciones de flecha en JavaScript, aquí dejo algunos ejemplos que ilustran cada uno de sus puntos importantes:</p>4
+                    <ol>
+                        <li>Sintaxis Concisa:</li>
+                        <p>Una función de flecha se define usando la sintaxis 
+                        <div class="codigo">
+                            <pre>
+                                <code class="javascript">
+                                    const nombreFuncion = (parametros) => {
+                                        // cuerpo de la función
+                                    };                                                                                                 
+                                </code>
+                            </pre> 
+                        </div>
+                        Esto elimina la necesidad de la palabra clave `function`.</p>
+                        <p>Vamos a ver un ejemplo gráfico de una función normal y una función flecha.<br>
+                            <img src="Imagenes/3. Fnc Flecha/Flecha 1.png" alt="Flecha_1" style="height: 350px; width: 600px;"></p>
+
+                        <li>Herencia de la palabra 'this'</li>
+                        <p>Las funciones de flecha no tienen su propio `this`; en su lugar, heredan `this` del contexto en el que fueron definidas. <br>
+                            <img src="Imagenes/3. Fnc Flecha/flecha this.png" alt="Flecha_2" style="height: 350px; width: 600px;"></p> <br>
+                            En este ejemplo, `this` dentro de la función de flecha se refiere a la instancia de `Persona`, no al contexto de `setInterval`.
+                        </p>
+                        <li>Sin el objeto de argumento.</li>
+                        <p>Las funciones de flecha no tienen su propio objeto arguments. <br>
+                            <img src="Imagenes/3. Fnc Flecha/Sin objeto argumento.png" alt="Flecha_3" style="height: 350px; width: 600px;"></p> <br>
+                        </p>
+                        <li>No Utilizables como Constructores</li>
+                        <p>Las funciones de flecha no pueden ser usadas como constructores y no tienen la propiedad `prototype`. <br>
+                            <img src="Imagenes/3. Fnc Flecha/flecha 4.png" alt="Flecha_4" style="height: 350px; width: 600px;">
+                        </p>
+                        <br>
+                        <h3>De la función flecha hemos aprendido que:</h3>
+                        <p>Las funciones de flecha en JavaScript ofrecen una sintaxis más limpia y resuelven problemas relacionados con el contexto de `this` 
+                            que a menudo complican el uso de funciones tradicionales. Su capacidad para heredar `this` del ámbito circundante y la ausencia
+                            de un objeto `arguments` propio las hacen ideales para callbacks y funciones de orden superior, proporcionando un código más legible
+                            y menos propenso a errores. No obstante, su imposibilidad de ser utilizadas como constructores y la falta de la propiedad `prototype`
+                            limitan su uso en ciertos casos, lo cual debe ser considerado al decidir cuándo emplearlas en lugar de funciones tradicionales.</p>
+                    </ol>
+                </div>
+                <hr>
+            </div>
+            <div class="deconstruccion">
+                <div class="preguntas">
+                    <h2>Qué es la deconstrucción de variables?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>La deconstrucción de variables es una técnica muy útil en programación que nos permite descomponer estructuras de datos complejas, 
+                        como arrays, objetos o tuplas, en partes más pequeñas y manejables. Esto facilita el acceso a los elementos individuales de la estructura
+                        y nos permite trabajar con ellos de manera más efectiva.</p>
+                </div>
+                <div class="respuestas">
+                    <h4>¡Ahora salgámonos un poco de los formalismos!.</h4>
+                    <p>Supongamos que eres un estudiante y tienes una mochila llena de libros y materiales escolares. Cada día, antes de ir a la escuela,
+                        necesitas organizar tus cosas para estar preparado. La deconstrucción de variables es como si dividieras tu mochila en compartimentos
+                        más pequeños para acceder a lo que necesitas de manera más eficiente.</p>
+                    <p>En este caso, considera que tu mochila es una estructura de datos compleja. En lugar de buscar en toda la mochila cada vez que necesitas
+                        un libro o una libreta, decides separar los elementos. Creas un compartimento para los libros, otro para los bolígrafos y lápices, 
+                        y uno más para las hojas de papel. Ahora, cuando llega el momento de estudiar, simplemente abres el compartimento correspondiente
+                        y tomas lo que necesitas.</p>
+                    <p>En programación, esto es similar. Si tienes un objeto con múltiples propiedades (como un estudiante con una mochila llena de cosas),
+                        puedes deconstruirlo para acceder a cada propiedad por separado. Por ejemplo, si tienes un objeto “estudiante” con propiedades 
+                        como “nombre”, “edad” y “materias”, puedes extraer cada una de estas propiedades y trabajar con ellas de manera más efectiva en tu programa.</p>
+                    <p>Mira estos ejemplos gráficos:</p>
+
+                    <h5>Supongamos que tenemos un objeto que representa a una persona:</h5>
+                    <div class="codigo">    
+                        <pre>
+                            <code class="javascript">
+                                const persona = {
+                                    nombre: 'Camilo',
+                                    edad: 26,
+                                    ciudad: 'Berlin'
+                                };                              
+                            </code>
+                        </pre>
+                    </div>
+                    <p>Si queremos acceder a las propiedades `nombre`, `edad` y `ciudad` por separado, podemos hacerlo de esta manera usando la deconstrucción
+                        de variables:</p>
+                    <div class="codigo">    
+                        <pre>
+                            <code class="javascript">
+                                const { nombre, edad, ciudad } = persona;
+
+                                console.log(nombre); // Imprime: Camilo
+                                console.log(edad);   // Imprime: 26
+                                console.log(ciudad); // Imprime: Berlin
+                            </code>
+                        </pre>
+                    </div>
+                    <p>Como puedes ver, hemos extraído las propiedades del objeto `persona` y las hemos asignado a variables con los mismos nombres. 
+                        Esto hace que nuestro código sea más legible y fácil de entender.</p>
+                    <p>Además, la deconstrucción de variables no se limita solo a objetos, también se puede aplicar a arrays y tuplas en otros lenguajes de programación.</p>
+                    <ol>
+                        <li>Deconstrucción de arrays:</li><p>La desestructuración de arrays permite asignar elementos de un array a variables 
+                            individuales en una sola expresión.</p>
+                            <img src="Imagenes/4. Deconstruccion/1. Deconst Array.png" alt="Deconstruccion_1" style="height: 350px; width: 600px;">
+                            <p>De esta misma forma podemos hacer la deconstrucción de Objetos - Funciones </p>
+                        <li>Anidación en Desestructuración:</li>
+                        <p>Es un concepto que permite extraer valores de objetos o arreglos que están anidados dentro de otros objetos o arreglos.
+                            Esto significa que puedes acceder a valores que están dentro de propiedades u elementos anidados, simplemente especificando
+                            la estructura anidada en la declaración de la desestructuración. Por ejemplo, si tienes un objeto que contiene otro objeto 
+                            dentro de una propiedad, o un arreglo que contiene otros arreglos como elementos, puedes desestructurar esa estructura 
+                            anidada para acceder a los valores internos de manera más directa y conveniente.</p>
+                        <P>Este es un ejemplo con ARRAYS anidados, de esta misma forma se puede hacer con objetos anidados.</P> <br>
+                        <img src="Imagenes/4. Deconstruccion/2. decon.png" alt="Deconstruccion_2" style="height: 350px; width: 600px;">
+                    </ol>
+                    <h3>En resumen sobre la deconstrucción., encontramos los siguientes beneficios:</h3>
+                            <ul>
+                                <li>Código más claro y conciso:</li>Reduce la cantidad de líneas de código necesarias para extraer valores.
+                                <li>Evita errores:</li>Menos propenso a errores que la asignación manual de variables.
+                                <li>Facilita el trabajo con funciones:</li>Especialmente útil cuando se trabaja con argumentos de función que son objetos.
+                            </ul>
+                    <p>La deconstrucción de variables es una técnica que nos permite trabajar con estructuras de datos complejas de manera más simple y efectiva,
+                        mejorando la legibilidad y mantenibilidad de nuestro código.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="operador_extension">
+                <div class="preguntas">
+                    <h2>¿Qué hace el operador de extensión en JS?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>El operador de extensión en JavaScript, está representado por tres puntos ..., tiene varias funciones poderosas y versátiles.
+                        Principalmente, se utiliza para expandir elementos de un iterable, como un arreglo, en lugares donde se esperan múltiples elementos, 
+                        como en argumentos de función o en la construcción de nuevos arreglos. Por ejemplo, al pasar un arreglo a una función que acepta
+                        múltiples argumentos, el operador de extensión permite descomponer ese arreglo en sus elementos individuales, facilitando la 
+                        manipulación de datos. Además, el operador de extensión puede ser utilizado para combinar arreglos o agregar 
+                        elementos a un arreglo de manera concisa, así como para copiar arreglos, evitando la mutación accidental de los datos originales.
+                        En el contexto de objetos, el operador de extensión permite copiar propiedades de un objeto a otro, así como combinar múltiples
+                            objetos en uno solo, lo cual es muy útil para la manipulación y actualización de estados en aplicaciones, especialmente en
+                            frameworks y librerías como React. Este operador también facilita la clonación superficial de objetos, asegurando que los 
+                            objetos originales no se vean afectados por cambios subsecuentes. En resumen, el operador de extensión simplifica la 
+                            manipulación y combinación de estructuras de datos, haciendo el código más legible y menos propenso a errores.</p>
+                </div>
+                <div class="respuestas">
+                    <h4>Mira esta explicación más divertida!</h4>
+                    <p>Imagina que tienes una cesta de frutas: manzanas, naranjas y plátanos. Con el operador de extensión, puedes "sacar" las 
+                        frutas de la cesta para usarlas individualmente, como si las vaciases en la mesa una a una. También puedes "combinar" frutas
+                        de diferentes cestas en una sola, como si juntases todas las frutas en un frutero grande. E incluso puedes "copiar" una
+                        cesta sin afectar la original, como si calcarás su contenido en otra cesta vacía.
+                        En resumen, el operador de extensión te permite manipular y combinar tus datos de forma sencilla y eficaz, haciendo que 
+                        tu código sea más claro, fácil de leer y menos propenso a errores. Es como tener una herramienta versátil en tu cocina de 
+                        programación que te facilita la vida.
+                    </p>
+                    <h5>Aqui tienes algunos ejemplos con codigo real, sobre el uso del operador de extensión.</h5>
+                    <ol>
+                        <li>Copiar Arrays:</li>
+                        <p>El operador de propagación en JavaScript te permite duplicar un array sin afectar el original. Imagina que tienes
+                            un conjunto de cartas y quieres hacer una copia exacta para otro jugador. El operador de propagación sería como 
+                            tomar todas las cartas y ponerlas en una nueva baraja, pero sin cambiar ninguna carta en la baraja original. Así,
+                            tienes dos barajas idénticas, pero independientes. Eso es lo que hace el spread operator con los arrays.</p>
+                        <img src="Imagenes/5. Extension/Extension 1.png" alt="Deconstruccion_2" style="height: 350px; width: 600px;">
+                        <li>combinación de arrays</li>
+                        <p>Podemos combinar dos o más arrays como lo exponemos en el siguiente ejemplo.</p>
+                        <img src="Imagenes/5. Extension/Extension 2.png" alt="Deconstruccion_2" style="height: 350px; width: 600px;">
+                        <li>Añadir Elementos a Arrays o Propiedades a Objetos</li>
+                        <p>El spread operator facilita la adición de nuevos elementos a un array o nuevas propiedades a un objeto sin modificar los originales.</p>
+                        <img src="Imagenes/5. Extension/Extension 3.png" alt="Deconstruccion_3" style="height: 350px; width: 600px;">
+                        <P>Aqui tenemos el mismo ejemplo pero usando objetos:</P>
+                        <img src="Imagenes/5. Extension/Extension 3.1.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;">
+                        <p>Con todo lo aprendido sobre el operador de extensión en JavaScript podemos deducir que es una herramienta esencial 
+                            para el desarrollo, ya que ofrece una forma sencilla y eficiente de manejar la expansión, combinación y clonación de 
+                            arreglos y objetos. Su uso no solo mejora la claridad y la concisión del código, sino que también reduce la posibilidad 
+                            de errores asociados con la mutación de datos, haciendo que la programación en JavaScript sea más facil de mantener y legible.</p>
+                    </ol>
+                    <hr>
+                </div>
+            </div>
+            <div class="poo">
+                <div class="preguntas">
+                    <h2>¿Qué es la programación orientada a objetos?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>La programación orientada a objetos (POO) es un paradigma de programación que utiliza "objetos" para representar datos y métodos
+                        que operan sobre esos datos. Estos objetos son instancias de "clases", que actúan como plantillas que definen las 
+                        propiedades y comportamientos que los objetos pueden tener. En la POO, los conceptos clave incluyen clases, objetos, 
+                        herencia (donde una clase puede derivarse de otra), encapsulamiento (ocultando detalles internos de los objetos), y
+                        polimorfismo (la capacidad de objetos de diferentes clases para ser tratados como instancias de una clase común). 
+                        Este enfoque permite a los programadores crear estructuras de datos complejas y relaciones entre ellas, 
+                        haciendo que el código sea más modular, reutilizable y fácil de mantener.</p>
+                </div>
+                <div class="respuestas">
+                    <p>Imagina que estás construyendo una serie de juguetes. Cada juguete es un objeto. Primero, creas una "clase" que actúa 
+                        como un molde o plano para un tipo de juguete, digamos, una "Bicicleta". Esta clase de Bicicleta define características
+                        generales que todas las bicicletas tendrán, como color, modelo y marca, así como acciones que pueden realizar, como arrancar,
+                        frenar y pedalear. Luego, puedes crear "objetos" específicos a partir de esta clase, como un bicicleta roja marca 
+                        ORBEA y una bici azul marca Giant. Cada una de estas bicis son un objeto con sus propias características y comportamientos,
+                        pero todos comparten la estructura definida por la clase Bicicleta.</p>
+                <p>Veamos cuales son los conceptos claves de la POO:</p>
+                <ol>
+                    <li>Objetos:</li>
+                    <p>Un objeto en programación es una instancia de una clase. Imagina que las clases son como los planos o moldes para crear objetos.
+                        Cada objeto agrupa datos (atributos) y funciones (métodos) que operan sobre esos datos. Pocas palabras, un objeto es una entidad 
+                        que representa algo en el mundo real con propiedades y comportamientos.</p>
+                    <P>Ejemplo:</P>
+                    <img src="Imagenes/6. POO/POO 1.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;">
+                    <li>Clases:</li>
+                    <p>Las clases las podemos expresar en nuestro entorno como una plantilla o el molde para hacer algun elemento, las clases
+                        definen las propiedades y métodos que sus objetos tendrán.</p>
+                    <p>Ejemplo.</p>
+                    <img src="Imagenes/6. POO/POO 2.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;">
+                    <li>Encapsulación:</li>
+                    <p>La encapsulación es el concepto de ocultar los detalles internos de un objeto y exponer solo lo necesario. 
+                        Esto se logra a través de métodos públicos y propiedades privadas.</p>
+                    <p>Ejemplo:</p>
+                    <img src="Imagenes/6. POO/POO 3.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;">
+                    <li>Herencia:</li>
+                    <p>La herencia permite crear nuevas clases basadas en clases existentes. La clase derivada (hija) hereda las propiedades
+                        y métodos de la clase base (padre), y puede añadir sus propias propiedades y métodos o sobrescribir los existentes.</p>
+                    <p>Ejemplo:</p>
+                    <img src="Imagenes/6. POO/POO 4.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;">
+                    <li>Polimorfismo:</li>
+                    <p>El polimorfismo permite que los métodos en diferentes clases se llamen de la misma manera pero se comporten de
+                        manera diferente según el objeto que los llame. Es una forma de que una clase pueda definirse y ser utilizada de diferentes maneras.</p>
+                    <p>Ejemplo:</p>
+                    <img src="Imagenes/6. POO/POO 5..png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;"> <br>
+                    <p>Ventajas de la Programación Orientada a Objetos:</p>
+                </ol>
+                <p>Ventajas de la Programación Orientada a Objetos:</p>
+                <ul>
+                    <li>Modularidad:</li> <p>El código se divide en partes independientes (clases), lo que facilita su mantenimiento y comprensión.</p>
+                    <li>Reutilización de Código:</li> <p>Las clases y objetos pueden reutilizarse en diferentes programas o partes del mismo programa.</p>
+                    <li>Facilidad de Mantenimiento:</li> <P>Las modificaciones en el código son más fáciles de implementar y menos propensas a errores.</P>
+                    <li>Escalabilidad:</li> <p>El diseño basado en objetos facilita la ampliación del software.</p>
+                </ul>
+                <p>La programación orientada a objetos es una forma de organizar y estructurar el código en términos de objetos y clases,
+                    permitiendo una mayor modularidad y reutilización del código. Al pensar en términos de objetos del mundo real, como motos o bicicletas
+                    con características y comportamientos específicos, es más fácil comprender cómo este paradigma ayuda a los desarrolladores a construir
+                    y gestionar sistemas complejos de manera eficientes y coherentes.</p>
+                </div>
+                <hr>
+            </div>
+            <div class="promesas">
+                <div class="preguntas">
+                    <h2>¿Qué es una promesa en JS?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>En JavaScript es un objeto que representa la eventual finalización (o falla) de una operación asincrónica y su resultado.
+                        Esto significa que una promesa es una forma de manejar procesos que no ocurren de inmediato, como solicitar datos de un servidor,
+                        esperar un temporizador o leer y escribir archivos. Las promesas permiten que el código siga ejecutándose mientras espera que estas
+                        operaciones se completen. Una promesa puede estar en uno de tres estados: pendiente (inicialmente), cumplida
+                        (cuando la operación se completa con éxito) o rechazada (cuando la operación falla). 
+                        Cuando se cumple o se rechaza, la promesa se resuelve con un valor o una razón de falla, respectivamente. Usando métodos como
+                        .then() y .catch(), podemos especificar lo que debe ocurrir cuando la promesa se cumple o se rechaza, manejando de manera clara 
+                        y ordenada las operaciones asincrónicas sin necesidad de utilizar múltiples callbacks anidados, que pueden hacer que el código 
+                        sea difícil de leer y mantener.</p>
+                </div>
+                <div class="respuestas">
+                    <p>Para entender mejor qué es una promesa, recordemos lo que pasa cuando pedimos una pizza por teléfono. La llamada telefónica
+                        es la operación asincrónica. Al hacer el pedido, no te quedas al teléfono esperando hasta que la pizza llegue; en cambio, 
+                        cuelgas y sigues viendo tu serie preferida. Aquí, la promesa es como la promesa de la pizzería de que tu pizza será entregada. 
+                        La promesa está "pendiente" mientras preparan y entregan la pizza. Una vez que la pizza llega, la promesa se 
+                        "cumple" y disfrutas tu pizza. Si algo sale mal y la pizza no llega, la promesa se "rechaza" y podrías recibir una 
+                        explicación de por qué no te entregaron la pizza.</p>
+                    <p>Entonces veamos cada una de las fases o estados de la promesa en nuestro codigo de JS.</p>
+                        <ol>
+                            <li>Pendiente (Pending):</li><p>Estado inicial, la promesa está en curso. Veamos gráficamente este proceso.</p>
+                            <li>Cumplida (Fulfilled):</li> <p>La operación se completó con éxito.</p>
+                            <li>Rechazada (Rejected)</li><p>La operación falló.</p>
+                            Ejemplo con la operacion exitosa: <br>
+                            <img src="Imagenes/7. Promises/Promesa 1.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;"> <br>
+                            Ejemplo con la operacion fallida. <br>
+                            <img src="Imagenes/7. Promises/Promesa 2.png" alt="Deconstruccion_3.1" style="height: 350px; width: 600px;"> <br>
+                        </ol>
+                        <p>Después de ver la sintaxis y un ejemplo de una promesa Fulfilled y otra Rejected veamos algunos ejemplos mas y un poco más complejos.</p>
+                        <ol>
+                            <li>Encadenamiento de Promesas</li><p>nos permite ejecutar una serie de operaciones en secuencia. Imagina 
+                                que tienes varias tareas que deben realizarse una tras otra, como leer un archivo, procesar los datos y 
+                                luego guardar los resultados en una base de datos. En lugar de anidar múltiples niveles de callbacks o promesas, 
+                                puedes encadenar las operaciones utilizando el método .then(). Cada llamada .then() representa una 
+                                acción que se ejecutará después de que la anterior haya terminado. Esto hace que el código sea más 
+                                legible y fácil de mantener. Así, en lugar de tener un código confuso con anidamientos profundos, puedes 
+                                estructurar tus tareas de manera ordenada y secuencial.</p>
+                            <img src="Imagenes/7. Promises/Promesas 3_ then.png" alt="" style="height: 350px; width: 600px;"> <br>
+                            <li>Métodos Estáticos de las Promesas:
+                                <ul>
+                                    <li>Promise.all():</li><p>es muy útil cuando necesitas esperar a que varias promesas se cumplan antes 
+                                        de continuar con una operación. Imagina que tienes una serie de tareas asincrónicas, como hacer múltiples 
+                                        solicitudes a una API o leer varios archivos. En lugar de esperar a cada una por separado, 
+                                        puedes usar Promise.all() para esperar a que todas se completen y obtener los resultados en un solo arreglo.
+                                        Si todas las promesas se resuelven correctamente, la promesa resultante también se resuelve con un arreglo 
+                                        que contiene los valores de cada una. Sin embargo, si alguna de las promesas se rechaza, la promesa resultante
+                                        también se rechaza con el motivo del primer rechazo. Esto hace que sea más fácil manejar múltiples operaciones 
+                                        asíncronas de manera eficiente.</p>
+                                    <img src="Imagenes/7. Promises/Promise 4..png" alt=""  style="height: 350px; width: 600px;"> <br>
+                                    <li>Promise.race():</li><p>Es como una carrera entre promesas. Imagina que tienes varias tareas asincrónicas y 
+                                        solo te interesa el resultado de la primera que se complete, sin importar si se resuelve o se rechaza.
+                                        Con Promise.race(), puedes crear una nueva promesa que se resolverá o rechazará tan pronto como una de las promesas
+                                        del iterable se complete. Si la primera promesa se resuelve, la promesa resultante también se resuelve con el mismo valor. 
+                                        Si la primera promesa se rechaza, la promesa resultante también se rechaza con el mismo motivo. 
+                                        Esto es útil cuando necesitas obtener una respuesta rápida y no quieres esperar a que todas las promesas terminen.</p>
+                                    <img src="Imagenes/7. Promises/Promise 5..png" alt=""  style="height: 350px; width: 600px;"> <br>
+                                    <li>Promise.allSettled():</li><p>Cuando necesitas esperar a que todas las promesas se resuelvan o se rechacen, 
+                                        sin importar cuál sea el resultado. A diferencia de Promise.all(), que se rechaza si alguna de las promesas se rechaza, 
+                                        Promise.allSettled() siempre se resuelve. Devuelve un arreglo de objetos, cada uno describiendo el resultado de una promesa. 
+                                        Cada objeto tiene dos propiedades: status (que puede ser "fulfilled" o "rejected") y value 
+                                        (que contiene el valor resuelto o el motivo del rechazo). Esto te permite manejar todas las promesas de manera más robusta, 
+                                        incluso si algunas fallan.</p>
+                                    <img src="Imagenes/7. Promises/Promise 6..png" alt="" style="height: 350px; width: 600px;"> <br>
+                                    <li>Promise.any():</li><p>Es como el ejemplo de una competencia entre promesas. Imagina que tienes 
+                                        varias tareas asincrónicas y solo te interesa el resultado de la primera que se complete, sin 
+                                        importar si se resuelve o se rechaza. Con Promise.any(), puedes crear una nueva promesa que se 
+                                        resolverá tan pronto como una de las promesas del iterable se complete. Si alguna de las promesas se resuelve,
+                                        la promesa resultante también se resuelve con el mismo valor. Sin embargo, si todas las promesas se rechazan, 
+                                        la promesa resultante se rechaza con un AggregateError que contiene los motivos de todos los rechazos. 
+                                        Esto es útil cuando necesitas obtener una respuesta rápida y no quieres esperar a que todas las promesas terminen</p>
+                                </ul>
+                            </li>
+                            <li>Fetch API:
+                            <p>Nos proporciona una interfaz moderna, flexible y versátil para realizar solicitudes HTTP en JavaScript. 
+                                Es parte de la API estándar de JavaScript y está soportada en todos los navegadores modernos.</p>
+                            <p>La respuesta de la Fetch API proporciona varios métodos para manejar diferentes tipos de respuestas:</p>
+                                <ul>
+                                    <li>response.json(): Parsea la respuesta como JSON.</li>
+                                    <li>response.text(): Parsea la respuesta como texto.</li>
+                                    <li>response.blob(): Parsea la respuesta como un Blob.</li>
+                                    <li>response.arrayBuffer(): Parsea la respuesta como un ArrayBuffer.</li>
+                                </ul>
+                                <img src="Imagenes/7. Promises/Promise 8 fetch.png" alt="" style="height: 350px; width: 600px;"> <br>
+                            </li>
+                        </ol>
+                        <p>Podemos concluir con que una promesa en JavaScript es una herramienta para manejar tareas que toman tiempo en completarse, 
+                            permitiendo que el programa siga funcionando sin interrupciones. Al representar estas tareas como promesas, 
+                            podemos escribir código más claro y gestionar eficazmente el éxito o el fallo de las operaciones asincrónicas, 
+                            mejorando la legibilidad y mantenibilidad del código.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="ultimo">
+                <div class="preguntas">
+                    <h2>¿Qué hacen async y await por nosotros?</h2>
+                </div>
+                <div class="explicacion">
+                    <p>Las palabras clave async y await en JavaScript se introdujeron en ECMAScript 2017 (ES8) para facilitar la 
+                        escritura y el manejo de código asincrónico. Estas palabras clave simplifican la forma en que se trabaja con operaciones asincrónicas, 
+                        haciendo que el código sea más fácil de leer y escribir en comparación con el uso de promesas encadenadas. 
+                        La palabra clave async se utiliza para declarar una función asincrónica, lo que significa que dicha función siempre devolverá una promesa. 
+                        Dentro de una función async, se puede usar la palabra clave await antes de una promesa para esperar su resolución. 
+                        Cuando se usa await, la ejecución de la función se pausa hasta que la promesa se resuelve, permitiendo que el resultado de la 
+                        promesa sea tratado como si fuera un valor síncrono. Esto hace que el flujo de trabajo asincrónico sea más intuitivo y lineal, 
+                        eliminando la necesidad de múltiples .then() y .catch().</p>
+                </div>
+                <div class="respuestas">
+                    <p>Para entender mejor cómo async y await facilitan el manejo de operaciones asincrónicas, imaginemos que estamos cocinando una 
+                    comida que incluye hervir agua y preparar los ingredientes. Sin async y await, tendríamos que verificar constantemente si el 
+                    agua ha hervido mientras seguimos preparando los ingredientes, lo cual es similar a cómo funcionan las promesas encadenadas. 
+                    Con async y await, simplemente podríamos esperar a que el agua hierva antes de continuar con la siguiente tarea, lo que hace 
+                    que la receta sea más fácil de seguir y ejecutar, sin interrupciones constantes.</p>
+                    <p>Veamos los usos y ejemplos de usos de estos conceptos:</p>
+                    <ol>
+                        <li>async:</li><p>la palabra clave async se utiliza para declarar funciones asincrónicas. Estas funciones están diseñadas para trabajar de manera no bloqueante, 
+                            lo que significa que no esperan a que una operación se complete antes de continuar con otras tareas. En lugar de eso, las funciones asincrónicas delegan 
+                            la ejecución de operaciones costosas (como llamadas a API, acceso a bases de datos o lectura de archivos) a un hilo de fondo, mientras el programa principal 
+                            sigue ejecutando otras instrucciones.</p>
+                            <p>Cuando declaras una función como async, automáticamente se convierte en una promesa. Esto significa que, 
+                            aunque no devuelvas explícitamente una promesa en la función, JavaScript la tratará como tal. Dentro de una función asincrónica, 
+                            puedes utilizar la palabra clave await para esperar a que se complete una operación asíncrona antes de continuar con el resto del código.</p>
+                    <img src="Imagenes/8. async-await/1. asinc.png" alt="" style="height: 350px; width: 600px;"> <br>
+                    <li>await:</li><p>La palabra clave await se utiliza dentro de una función async en JavaScript para esperar a que una promesa se resuelva. 
+                        Cuando encuentras await, le dices al intérprete que detenga temporalmente la ejecución del código hasta que la promesa se complete. 
+                        Esto es especialmente útil cuando trabajas con operaciones asíncronas, como solicitudes HTTP o acceso a bases de datos. 
+                        Al utilizar await, puedes mantener un flujo de ejecución más claro y evitar anidaciones excesivas de callbacks.</p>
+                        <img src="Imagenes/8. async-await/2. await.png" alt="" style="height: 350px; width: 600px;"> <br>
+                    </ol>
+                    <h5>Veamos otro ejemplo:</h5>Con un uso combinado entre estos dos conceptos. <br>
+                    <img src="Imagenes/8. async-await/3. conjunto.png" alt="" style="height: 350px; width: 600px;"> <br>
+                    <p>Las ventajas que tenemos al usar async y await los podemos driscriminar en:</p>
+                    <ul>
+                        <li>Código más legible:</li> La sintaxis se asemeja al código sincrónico, lo que facilita la lectura y comprensión.
+                        <li>Manejo sencillo de errores:</li> El uso de `try` y `catch` dentro de funciones `async` proporciona un manejo de errores más 
+                        claro y estructurado.
+                        <li>Evita la anidación de promesas:</li> Reduce la necesidad de encadenar múltiples promesas, evitando el "callback hell" o "pyramid of doom".
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h3>Espero que esta informacióno te sea util hayas adquirido nuevos conocimientos.</h3>
+    </div>
+</body>
+</html>
